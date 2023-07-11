@@ -1,6 +1,7 @@
-import './global.css'
+'use client'
 import type { Metadata } from 'next'
-
+import NavBar from '@/components/NavBar'
+import MiniNavBar from '@/components/MiniNavBar'
 
 export const metadata: Metadata = {
   title: 'Ecommerce',
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <>
+      <MiniNavBar />
+      <NavBar />
+      <div className="container mx-auto">{children}</div>
+    </>
   )
 }
